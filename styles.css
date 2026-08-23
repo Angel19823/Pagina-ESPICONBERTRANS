@@ -281,6 +281,9 @@ a {
 
 .policy p {
   font-size: 1.05rem;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 /* ---- Stats ---- */
@@ -317,6 +320,8 @@ a {
 .contact li {
   padding: 0.5rem 0;
   font-size: 1.05rem;
+  padding-left: 4em;
+  text-indent: -4em;
 }
 
 .contact a {
