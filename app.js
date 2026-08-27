@@ -60,3 +60,32 @@ revealElements.forEach((el) => {
   el.classList.add("reveal");
   revealObserver.observe(el);
 });
+
+// ---- Carrusel de documentos ----
+const slides = document.querySelectorAll(".doc-carousel__slide");
+const dots = document.querySelectorAll(".dot");
+const counter = document.querySelector(".doc-carousel__counter");
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides[currentSlide].classList.remove("active");
+  dots[currentSlide].classList.remove("active");
+  currentSlide = index;
+  slides[currentSlide].classList.add("active");
+  dots[currentSlide].classList.add("active");
+  counter.textContent = (currentSlide + 1) + " / " + slides.length;
+}
+
+document.querySelector(".doc-carousel__btn--prev").addEventListener("click", () => {
+  showSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1);
+});
+
+document.querySelector(".doc-carousel__btn--next").addEventListener("click", () => {
+  showSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
+});
+
+dots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    showSlide(parseInt(dot.dataset.index));
+  });
+});
