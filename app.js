@@ -16,15 +16,26 @@ nav.addEventListener("click", (event) => {
 });
 
 const galleryItems = document.querySelectorAll(".gallery__item img");
+const certItems = document.querySelectorAll(".cert-img--zoom");
 const lightbox = document.createElement("div");
 lightbox.className = "lightbox hidden";
 lightbox.innerHTML = '<img alt="Imagen ampliada">';
 document.body.appendChild(lightbox);
 
+function openLightbox(src) {
+  lightbox.querySelector("img").src = src;
+  lightbox.classList.remove("hidden");
+}
+
 galleryItems.forEach((img) => {
   img.addEventListener("click", () => {
-    lightbox.querySelector("img").src = img.src;
-    lightbox.classList.remove("hidden");
+    openLightbox(img.src);
+  });
+});
+
+certItems.forEach((img) => {
+  img.addEventListener("click", () => {
+    openLightbox(img.dataset.full);
   });
 });
 

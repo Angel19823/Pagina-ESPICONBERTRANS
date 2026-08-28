@@ -281,6 +281,16 @@ a {
   background: #f8f8f8;
 }
 
+.cert-img--zoom {
+  cursor: zoom-in;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-img--zoom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(11, 31, 51, 0.2);
+}
+
 .grid--3 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
