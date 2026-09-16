@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pagina-espiconbertrans.vercel.app/sitemap.xml
